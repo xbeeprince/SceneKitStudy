@@ -13,6 +13,10 @@
 		A3AFF2621FE15650005B80C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3AFF2601FE15650005B80C2 /* LaunchScreen.storyboard */; };
 		A3AFF2651FE15650005B80C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A3AFF2641FE15650005B80C2 /* main.m */; };
 		A3AFF26D1FE15673005B80C2 /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3AFF26C1FE15673005B80C2 /* SceneKit.framework */; };
+		A3B6BFEB1FE21A9500F8DD09 /* resource in Resources */ = {isa = PBXBuildFile; fileRef = A3B6BFEA1FE21A9500F8DD09 /* resource */; };
+		A3B6BFFB1FE21F9B00F8DD09 /* GameSCNView.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B6BFFA1FE21F9B00F8DD09 /* GameSCNView.m */; };
+		A3B6C0031FE2225A00F8DD09 /* ImageUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B6C0001FE2225A00F8DD09 /* ImageUtil.m */; };
+		A3B6C0041FE2225A00F8DD09 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = A3B6C0021FE2225A00F8DD09 /* UIView+Frame.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,14 @@
 		A3AFF2631FE15650005B80C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3AFF2641FE15650005B80C2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A3AFF26C1FE15673005B80C2 /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
+		A3B6BFEA1FE21A9500F8DD09 /* resource */ = {isa = PBXFileReference; lastKnownFileType = folder; name = resource; path = SceneKitStudy/resource; sourceTree = "<group>"; };
+		A3B6BFF91FE21F9B00F8DD09 /* GameSCNView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameSCNView.h; sourceTree = "<group>"; };
+		A3B6BFFA1FE21F9B00F8DD09 /* GameSCNView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameSCNView.m; sourceTree = "<group>"; };
+		A3B6BFFD1FE2208000F8DD09 /* GameHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameHeader.h; sourceTree = "<group>"; };
+		A3B6BFFF1FE2225A00F8DD09 /* ImageUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageUtil.h; sourceTree = "<group>"; };
+		A3B6C0001FE2225A00F8DD09 /* ImageUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageUtil.m; sourceTree = "<group>"; };
+		A3B6C0011FE2225A00F8DD09 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		A3B6C0021FE2225A00F8DD09 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +55,7 @@
 		A3AFF2491FE15650005B80C2 = {
 			isa = PBXGroup;
 			children = (
+				A3B6BFEA1FE21A9500F8DD09 /* resource */,
 				A3AFF2541FE15650005B80C2 /* SceneKitStudy */,
 				A3AFF2531FE15650005B80C2 /* Products */,
 				A3AFF26B1FE15673005B80C2 /* Frameworks */,
@@ -64,6 +77,7 @@
 				A3AFF2561FE15650005B80C2 /* AppDelegate.m */,
 				A3AFF2581FE15650005B80C2 /* SceneKitViewController.h */,
 				A3AFF2591FE15650005B80C2 /* SceneKitViewController.m */,
+				A3B6BFF51FE21F7900F8DD09 /* Game */,
 				A3AFF25E1FE15650005B80C2 /* Assets.xcassets */,
 				A3AFF2601FE15650005B80C2 /* LaunchScreen.storyboard */,
 				A3AFF2631FE15650005B80C2 /* Info.plist */,
@@ -78,6 +92,52 @@
 				A3AFF26C1FE15673005B80C2 /* SceneKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A3B6BFF51FE21F7900F8DD09 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				A3B6BFFD1FE2208000F8DD09 /* GameHeader.h */,
+				A3B6BFFE1FE2225A00F8DD09 /* Util */,
+				A3B6BFF61FE21F7900F8DD09 /* Handler */,
+				A3B6BFF71FE21F7900F8DD09 /* Model */,
+				A3B6BFF81FE21F7900F8DD09 /* UI */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		A3B6BFF61FE21F7900F8DD09 /* Handler */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Handler;
+			sourceTree = "<group>";
+		};
+		A3B6BFF71FE21F7900F8DD09 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A3B6BFF81FE21F7900F8DD09 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A3B6BFF91FE21F9B00F8DD09 /* GameSCNView.h */,
+				A3B6BFFA1FE21F9B00F8DD09 /* GameSCNView.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		A3B6BFFE1FE2225A00F8DD09 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				A3B6BFFF1FE2225A00F8DD09 /* ImageUtil.h */,
+				A3B6C0001FE2225A00F8DD09 /* ImageUtil.m */,
+				A3B6C0011FE2225A00F8DD09 /* UIView+Frame.h */,
+				A3B6C0021FE2225A00F8DD09 /* UIView+Frame.m */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +200,7 @@
 			files = (
 				A3AFF2621FE15650005B80C2 /* LaunchScreen.storyboard in Resources */,
 				A3AFF25F1FE15650005B80C2 /* Assets.xcassets in Resources */,
+				A3B6BFEB1FE21A9500F8DD09 /* resource in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,9 +211,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3B6C0041FE2225A00F8DD09 /* UIView+Frame.m in Sources */,
 				A3AFF25A1FE15650005B80C2 /* SceneKitViewController.m in Sources */,
 				A3AFF2651FE15650005B80C2 /* main.m in Sources */,
 				A3AFF2571FE15650005B80C2 /* AppDelegate.m in Sources */,
+				A3B6BFFB1FE21F9B00F8DD09 /* GameSCNView.m in Sources */,
+				A3B6C0031FE2225A00F8DD09 /* ImageUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

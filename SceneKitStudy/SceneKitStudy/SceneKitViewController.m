@@ -7,9 +7,9 @@
 //
 
 #import "SceneKitViewController.h"
-#import <SceneKit/SceneKit.h>
+#import "GameSCNView.h"
 
-@interface SceneKitViewController ()
+@interface SceneKitViewController ()<UINavigationControllerDelegate>
 
 @end
 
@@ -19,37 +19,30 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.title = @"SceneKit";
+    // 设置导航控制器的代理为self
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.navigationController.delegate = self;
     [self setupScnView];
 }
 
 -(void)setupScnView
 {
-    SCNView *scnView = [[SCNView alloc] initWithFrame:self.view.bounds];
-    scnView.scene = [SCNScene scene];
-    scnView.backgroundColor = [UIColor redColor];
+    GameSCNView *scnView = [[GameSCNView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:scnView];
-    
-    SCNNode *textNode = [SCNNode node];
-    SCNText *text = [SCNText textWithString:@"酷走天涯" extrusionDepth:0.5];
-    textNode.geometry = text;
-    
-    [scnView.scene.rootNode addChildNode:textNode];
-    
-    SCNBox *box = [SCNBox boxWithWidth:10 height:10 length:10 chamferRadius:0];
-    box.firstMaterial.diffuse.contents = [UIColor blueColor];
-    SCNNode *boxNode = [SCNNode node];
-    boxNode.geometry = box;
-//    boxNode.position = SCNVector3Make(self.view.bounds.size.width/2,self.view.bounds.size.height/2,0);
-    
-    [scnView.scene.rootNode addChildNode:boxNode];
-    
-    scnView.allowsCameraControl = YES;
 }
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - UINavigationControllerDelegate
+// 将要显示控制器
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    // 判断要显示的控制器是否是自己
+    BOOL isShowHomePage = [viewController isKindOfClass:[self class]];
+    
+    [self.navigationController setNavigationBarHidden:isShowHomePage animated:YES];
+}
+
+- (void)dealloc {
+    self.navigationController.delegate = nil;
 }
 
 
